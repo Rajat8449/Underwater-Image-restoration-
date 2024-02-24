@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .image {
+            width: 48%; /* Adjust the width as needed */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>Result</h1>
+    <div class="container">
+        <div class="image">
+            <h2>Input Image</h2>
+            <img src="{{ input_image_url }}" alt="Input Image" width="100%">
+        </div>
+        <div class="image">
+            <h2>Translated Image</h2>
+            <img src="{{ translated_image_url }}" alt="Translated Image" width="100%">
+        </div>
+    </div>
+    <a href="{{ url_for('download_result') }}" download="translated_image.jpg">Download Translated Image</a>
+</body>
+</html>

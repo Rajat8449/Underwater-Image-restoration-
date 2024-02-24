@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CycleGAN Image Restoration</title>
+</head>
+<body>
+    <h1>CycleGAN Image Restoration</h1>
+
+    <form action="/result" method="post" enctype="multipart/form-data">
+        <label for="input_image">Choose an image:</label>
+        <input type="file" id="input_image" name="input_image" accept="image/*" required>
+        <br>
+        <input type="submit" value="Restore Image">
+    </form>
+
+    {% if input_image_url %}
+        <h2>Input Image:</h2>
+        <img src="{{ input_image_url }}" alt="Input Image" style="max-width: 100%;">
+
+        <h2>Restored Image:</h2>
+        <img src="{{ translated_image_url }}" alt="Restored Image" style="max-width: 100%;">
+    {% endif %}
+</body>
+</html>
